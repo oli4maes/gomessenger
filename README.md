@@ -33,35 +33,35 @@ type Response struct {
 ```go
 // Register createProductHandler
 func init() {
-	repo := NewProductRepo()
-	
-	err := mediator.Register[Request, Response](handler{repo: repo})
-	if err != nil {
+    repo := NewProductRepo()
+
+    err := mediator.Register[Request, Response](handler{repo: repo})
+    if err != nil {
         panic (err)
     }
 }
 
 // handler is the mediator handler, all dependencies should be added here
 type handler struct {
-	repo ProductRepo
+    repo ProductRepo
 }
 
 func (h handler) Handle(ctx context.Context, request Request) (Response, error) {
-	product := Product {
-	    ProductID: 	 uuid.New(),
-		Name:        request.Name,
+    product := Product {
+        ProductID:   uuid.New(),
+        Name:        request.Name,
         Description: request.Description,
     }
-	
-	createdProduct, err := h.repo.Create(ctx, product)
-	if err != nil {
-		return  Response{}, err
+    
+    createdProduct, err := h.repo.Create(ctx, product)
+    if err != nil {
+        return  Response{}, err
     }
-	
-	return Response {
-		ProductID:   createdProduct.ProductID,
-		Name:        createdProduct.Name,
-		Description: createdProduct.Description,
+    
+    return Response {
+            ProductID:   createdProduct.ProductID,
+            Name:        createdProduct.Name,
+            Description: createdProduct.Description,
     }, nil   
 }
 
