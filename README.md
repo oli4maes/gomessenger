@@ -76,5 +76,5 @@ request := createproduct.Request {
 	Description: "description",
 }
 
-response, err := mediator.Send[createproduct.Request, createproduct.Response](ctx, request)
+response, err := mediator.Send[Request, Response](ctx, request)
 ```
