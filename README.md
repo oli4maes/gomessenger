@@ -1,5 +1,5 @@
 # Go Messenger
-In-process messaging library.
+In-process messaging package.
 
 ## Usage
 An example of how to use the request/response pattern with the appropriate request handler.
