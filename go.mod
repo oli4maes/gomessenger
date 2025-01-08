@@ -1,3 +1,3 @@
-module github.com/oli4maes/mediator
+module github.com/oli4maes/messenger
 
-go 1.22
+go 1.23

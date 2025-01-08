@@ -1,4 +1,4 @@
-package mediator
+package messenger
 
 import (
 	"context"
