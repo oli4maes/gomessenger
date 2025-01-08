@@ -1,4 +1,4 @@
-# Messenger
+# Go Messenger
 In-process messaging library.
 
 ## Usage
