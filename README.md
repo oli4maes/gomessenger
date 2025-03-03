@@ -31,7 +31,7 @@ type Response struct {
 // Register createProductHandler
 repo := NewProductRepo()
 
-err := mediator.Register[Request, Response](handler{repo: repo})
+err := messenger.Register[Request, Response](handler{repo: repo})
 if err != nil {
     panic (err)
 }
